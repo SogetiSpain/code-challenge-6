@@ -33,6 +33,13 @@ namespace CodeChallenge6
             }
         }
 
+        public Card(CardSuit suit, CardValue value)
+        {
+            this.Suit = suit;
+            this.Value = value;
+            this.IsUnknown = false;
+        }
+
         private void ParseCardString(string cardString)
         {
             var suitString = cardString.Substring(cardString.Length - 1, 1);
@@ -100,6 +107,26 @@ namespace CodeChallenge6
                     this.Suit = CardSuit.Hearts;
                     break;
             }
+        }
+
+        public void RevealCard(Card revealedCard)
+        {
+            if(!this.IsUnknown)
+            {
+                throw new ArgumentException("Card isn't unknown, cannot be revealed.");
+            }
+            this.IsUnknown = false;
+            this.Suit = revealedCard.Suit;
+            this.Value = revealedCard.Value;           
+        }
+
+        public override bool Equals(object obj)
+        {
+            var cardToCompare = (Card)obj;
+
+            if(cardToCompare.IsUnknown && this.IsUnknown) { return true; }
+            if(!cardToCompare.IsUnknown && cardToCompare.Suit == this.Suit && cardToCompare.Value == this.Value) { return true; }
+            return false;
         }
 
         public override string ToString()

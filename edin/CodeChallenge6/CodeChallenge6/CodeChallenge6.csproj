@@ -47,6 +47,9 @@
     <Compile Include="CardPlay.cs" />
     <Compile Include="CardPlayType.cs" />
     <Compile Include="CardReader.cs" />
+    <Compile Include="GameTreeNode.cs" />
+    <Compile Include="GameTurn.cs" />
+    <Compile Include="PlayerHand.cs" />
     <Compile Include="PlayerMove.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +58,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sampleinput2.txt" />
     <Content Include="sampleinput.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,7 +11,11 @@ namespace CodeChallenge6
         static void Main(string[] args)
         {
             var cardReader = new CardReader();
-            cardReader.ProcessInputFile("..\\..\\sampleinput.txt");
+            cardReader.ProcessInputFile("..\\..\\sampleinput2.txt");
+
+            cardReader.BuildTree();
+
+            cardReader.FindCorrectPath();
 
             Console.ReadLine();
         }
