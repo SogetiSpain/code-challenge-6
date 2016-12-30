@@ -52,7 +52,7 @@ namespace CodeChallenge6
             var newHand = new PlayerHand();
             foreach(var card in this.Cards)
             {
-                newHand.AddCard(new Card(card.Suit, card.Value));
+                newHand.AddCard(new Card(card.Suit, card.Value, card.IsUnknown));
             }
             return newHand;
         }

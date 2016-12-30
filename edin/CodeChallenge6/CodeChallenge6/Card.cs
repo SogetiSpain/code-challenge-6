@@ -33,11 +33,18 @@ namespace CodeChallenge6
             }
         }
 
-        public Card(CardSuit suit, CardValue value)
+        public Card(CardSuit suit, CardValue value)          
         {
             this.Suit = suit;
             this.Value = value;
             this.IsUnknown = false;
+        }
+
+        public Card(CardSuit suit, CardValue value, bool isUnknown)
+        {
+            this.Suit = suit;
+            this.Value = value;
+            this.IsUnknown = isUnknown;
         }
 
         private void ParseCardString(string cardString)

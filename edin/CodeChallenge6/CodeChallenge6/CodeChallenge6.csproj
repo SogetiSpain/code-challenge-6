@@ -58,6 +58,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sampleinput1.txt" />
     <Content Include="sampleinput2.txt" />
     <Content Include="sampleinput.txt" />
   </ItemGroup>

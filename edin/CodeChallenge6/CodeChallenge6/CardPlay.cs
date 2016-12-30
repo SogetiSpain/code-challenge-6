@@ -1,4 +1,6 @@
-﻿namespace CodeChallenge6
+﻿using System;
+
+namespace CodeChallenge6
 {
     public class CardPlay
     {
@@ -6,9 +8,12 @@
         public Card CardPlayed { get; private set; }
         public string AnotherPlayer { get; private set; }
 
+        private string OriginalString { get; set; }
+
         public CardPlay(string cardPlayString)
         {
-            // +/- card : player/discard            
+            // +/- card : player/discard          
+            this.OriginalString = cardPlayString;  
             var cardSeparatorIndex = cardPlayString.Length;
             this.AnotherPlayer = string.Empty;
 
@@ -32,6 +37,12 @@
                     this.PlayType = CardPlayType.GiveCard;
                     break;
             }
+        }
+
+        public CardPlay Copy()
+        {
+            var result = new CardPlay(this.OriginalString);
+            return result;
         }
     }
 }

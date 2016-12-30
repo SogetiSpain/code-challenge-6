@@ -32,7 +32,7 @@ namespace CodeChallenge6
 
             var discards = new List<Card>();
 
-            var lilsHands = rootNode.ProcessTurn(hands, discards, new List<PlayerHand>());
+            var lilsHands = rootNode.ProcessTurn(hands, discards);
 
             DumpLilHands(lilsHands);
         }
@@ -83,7 +83,7 @@ namespace CodeChallenge6
   
         private PlayerMove  ProcessPlayerLine(string line)
         {
-            Console.WriteLine("Player Line: {0}", line);
+            //Console.WriteLine("Player Line: {0}", line);
             var playerMove = ParsePlayerLine(line);
             // DumpPlayerMove(playerMove);
             return playerMove;
@@ -98,21 +98,6 @@ namespace CodeChallenge6
                 {
                     Console.Write(lilCard);
                     Console.Write(" ");
-                }
-                Console.WriteLine();
-            }
-        }
-
-        private void DumpPlayerMove(PlayerMove playerMove)
-        {
-            Console.WriteLine("{0} turn:", playerMove.PlayerName);
-
-            foreach(var play in playerMove.CardPlays)
-            {
-                Console.Write("- {0} {1}", play.PlayType, play.CardPlayed);
-                if(!string.IsNullOrEmpty(play.AnotherPlayer))
-                {
-                    Console.Write(" to/from {0}", play.AnotherPlayer);
                 }
                 Console.WriteLine();
             }
